@@ -1,0 +1,67 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+
+# Local secrets and environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+env/
+ENV/
+pip-wheel-metadata/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# IDEs
+.idea/
+.vscode/
+
+# Hugging Face / ML caches and artifacts
+.cache/
+huggingface/
+data/
+datasets/
+artifacts/
+checkpoints/
+models/
+runs/
+wandb/
+mlruns/
+
+# Large model/index files
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.faiss
+*.index
+*.onnx
+*.pkl
+*.joblib
+
+# Logs
+*.log
+logs/

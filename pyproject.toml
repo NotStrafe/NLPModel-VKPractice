@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "marusya-miracl-qa"
+version = "0.1.0"
+description = "Retrieval QA pipeline for Russian MIRACL queries inspired by VK Marusya."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "datasets>=2.19.0",
+    "fastapi>=0.115.0",
+    "faiss-cpu>=1.8.0",
+    "huggingface-hub>=0.24.0",
+    "numpy>=1.24.0",
+    "python-dotenv>=1.0.0",
+    "sentence-transformers>=3.0.0",
+    "torch>=2.2.0",
+    "tqdm>=4.66.0",
+    "uvicorn[standard]>=0.30.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.5.0",
+]
+
+[project.scripts]
+marusya-qa-train = "marusya_qa.train:main"
+marusya-qa-index = "marusya_qa.index:main"
+marusya-qa-evaluate = "marusya_qa.evaluate:main"
+marusya-qa-answer = "marusya_qa.answer:main"
+marusya-qa-calibrate = "marusya_qa.calibrate:main"
+marusya-qa-ui = "marusya_qa.ui:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
